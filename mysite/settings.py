@@ -25,7 +25,7 @@ SECRET_KEY = 'asuqfj18(h+ia!cqm)da800qg)o#)b-@3u=h4(p1vp($^j(a$^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['dima2015.pythonanywhere.com']
 
 
 # Application definition
