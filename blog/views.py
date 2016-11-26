@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.utils import timezone
 from django.shortcuts import render, get_object_or_404
+from django.views.generic import TemplateView
 from django.shortcuts import redirect
 from .forms import PostForm
 from .models import Post
@@ -8,7 +9,6 @@ from .models import Post
 
 def post_list(request):
     posts = Post.objects.all().order_by('-published_date')
-    print(posts)
     return render(request, 'blog/post_list.html', {'posts': posts})
 
 
@@ -43,3 +43,6 @@ def post_edit(request, pk):
         else:
             form = PostForm(instance=post)
         return render(request, 'blog/post_edit.html', {'form': form})
+
+class AboutView(TemplateView):
+    template_name = "about.html"
